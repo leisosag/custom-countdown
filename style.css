@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -8,6 +10,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* Video Background */
@@ -35,8 +38,10 @@ video {
 
 /* Container */
 .container {
-  min-width: 580px;
-  min-height: 304px;
+  /*min-width: 580px;
+  min-height: 304px;*/
+  min-width: 40vw;
+  min-height: 40vh;
   color: black;
   margin: 0 auto;
   padding: 25px 50px;
@@ -71,12 +76,14 @@ label {
 
 input {
   width: 95%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   background: #fff;
   outline: none;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* Button */
@@ -92,6 +99,9 @@ button {
   cursor: pointer;
   outline: none;
 }
+button:hover {
+  filter: brightness(110%);
+}
 
 /* Countdown */
 ul {
@@ -99,6 +109,7 @@ ul {
 }
 
 li {
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -115,6 +126,31 @@ li span {
 .complete {
   position: relative;
   top: 60px;
+}
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: #ed1a3b;
+  }
+  20% {
+    color: #f78022;
+  }
+  40% {
+    color: #fef200;
+  }
+  60% {
+    color: #0fb14c;
+    transform: scale(1.1);
+  }
+  80% {
+    color: #005baa;
+  }
+  100% {
+    color: #922791;
+  }
 }
 
 /* Media Query: Large Smartphone (Vertical) */
@@ -143,7 +179,9 @@ li span {
     position: relative;
     top: 10px;
   }
-
+  .complete-title {
+    font-size: 1.5rem;
+  }
   .form {
     width: unset;
   }
@@ -157,10 +195,10 @@ li span {
   }
 
   li {
-    font-size: 15px;
+    font-size: 10px;
   }
 
   li span {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
